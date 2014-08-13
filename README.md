@@ -1,0 +1,4 @@
+akor
+====
+
+Kullandığım Gitar Akorları
