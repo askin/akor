@@ -1,4 +1,4 @@
 akor
 ====
 
-Kullandığım Gitar Akorları
+Çıktısını almadığım akorlar
