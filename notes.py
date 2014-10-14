@@ -3,6 +3,14 @@
 
 import random
 
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+
 NOTES = ['Do', 'Re', 'Mi', 'Fa', 'Sol', 'La', 'Si']
 
 def lets_the_game_begin():
@@ -13,22 +21,23 @@ def lets_the_game_begin():
     if index == 0:
         prev_note = 6
 
+
     if index == 6:
         next_note = 0
 
     print "Nota: %s" % NOTES[index]
 
     var = raw_input("Önceki Nota Nedir : ")
-    if var ==  NOTES[prev_note]:
-        print "Doğru"
+    if var.capitalize() ==  NOTES[prev_note]:
+        print "%sDoğru%s" % (bcolors.OKGREEN, bcolors.ENDC)
     else:
-        print "Yanlış, Doğrusu: %s" % NOTES[prev_note]
+        print "%sYanlış, Doğrusu: %s%s%s" % (bcolors.FAIL, bcolors.WARNING, NOTES[prev_note], bcolors.ENDC)
 
     var = raw_input("Sonraki Nota Nedir: ")
-    if var ==  NOTES[next_note]:
-        print "Doğru"
+    if var.capitalize() ==  NOTES[next_note]:
+        print "%sDoğru%s" % (bcolors.OKGREEN, bcolors.ENDC)
     else:
-        print "Yanlış, Doğrusu: %s" % NOTES[next_note]
+        print "%sYanlış, Doğrusu: %s%s%s" % (bcolors.FAIL, bcolors.WARNING, NOTES[next_note], bcolors.ENDC)
 
 if __name__ == '__main__':
     for i in range(10):
