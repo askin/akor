@@ -1,4 +1,4 @@
 akor
 ====
 
-Kullandığım Gitar Akorları
+Bazı şeyleri öğrenmek için yazdığım programlar
