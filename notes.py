@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import random
+from datetime import datetime
 
 class bcolors:
     HEADER = '\033[95m'
@@ -47,13 +48,17 @@ def lets_the_game_begin():
 
 if __name__ == '__main__':
     point = 0
+    game_start = datetime.now()
     for i in range(10):
         point = point + lets_the_game_begin()
         print "-------------------\n"
+    game_end = datetime.now()
 
     print "%s#################" % bcolors.FAIL
     if point == 20:
         print "%s# %s%%100 Başarılı%s" % (bcolors.FAIL, bcolors.OKGREEN, bcolors.ENDC)
     else:
         print "%s# %s%%%s Başarılı%s" % (bcolors.FAIL, bcolors.OKBLUE, str(point * 5), bcolors.ENDC)
+
+    print "%s# %sTotal time: %s" % (bcolors.FAIL, bcolors.OKBLUE, (game_end - game_start).total_seconds())
     print "%s#################%s" % (bcolors.FAIL, bcolors.ENDC)
