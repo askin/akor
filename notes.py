@@ -56,9 +56,9 @@ if __name__ == '__main__':
 
     print "%s#################" % bcolors.FAIL
     if point == 20:
-        print "%s# %s%%100 Başarılı%s" % (bcolors.FAIL, bcolors.OKGREEN, bcolors.ENDC)
+        print "%s# %s%%100 Başarılı" % (bcolors.FAIL, bcolors.OKGREEN)
     else:
-        print "%s# %s%%%s Başarılı%s" % (bcolors.FAIL, bcolors.OKBLUE, str(point * 5), bcolors.ENDC)
+        print "%s# %s%%%s Başarılı" % (bcolors.FAIL, bcolors.OKBLUE, str(point * 5))
 
     print "%s# %sTotal time: %s" % (bcolors.FAIL, bcolors.OKBLUE, (game_end - game_start).total_seconds())
     print "%s#################%s" % (bcolors.FAIL, bcolors.ENDC)
