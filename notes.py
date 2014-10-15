@@ -18,6 +18,8 @@ def lets_the_game_begin():
     prev_note = index - 1
     next_note = index + 1
 
+    point = 0
+
     if index == 0:
         prev_note = 6
 
@@ -30,16 +32,28 @@ def lets_the_game_begin():
     var = raw_input("Önceki Nota Nedir : ")
     if var.capitalize() ==  NOTES[prev_note]:
         print "%sDoğru%s" % (bcolors.OKGREEN, bcolors.ENDC)
+        point = point + 1
     else:
         print "%sYanlış, Doğrusu: %s%s%s" % (bcolors.FAIL, bcolors.WARNING, NOTES[prev_note], bcolors.ENDC)
 
     var = raw_input("Sonraki Nota Nedir: ")
     if var.capitalize() ==  NOTES[next_note]:
+        point = point + 1
         print "%sDoğru%s" % (bcolors.OKGREEN, bcolors.ENDC)
     else:
         print "%sYanlış, Doğrusu: %s%s%s" % (bcolors.FAIL, bcolors.WARNING, NOTES[next_note], bcolors.ENDC)
 
+    return point
+
 if __name__ == '__main__':
+    point = 0
     for i in range(10):
-        lets_the_game_begin()
+        point = point + lets_the_game_begin()
         print "-------------------\n"
+
+    print "%s#################" % bcolors.FAIL
+    if point == 20:
+        print "%s# %s%%100 Başarılı%s" % (bcolors.FAIL, bcolors.OKGREEN, bcolors.ENDC)
+    else:
+        print "%s# %s%%%s Başarılı%s" % (bcolors.FAIL, bcolors.OKBLUE, str(point * 5), bcolors.ENDC)
+    print "%s#################%s" % (bcolors.FAIL, bcolors.ENDC)
